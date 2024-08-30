@@ -1,0 +1,37 @@
+.logo {
+  text-align: center;
+  padding: 10px;
+  position: relative;
+}
+
+.logo svg {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  width: 40px;
+  height: 40px;
+  border-radius: 4px; /* border-m */
+}
+
+.logo span {
+  position: absolute;
+  top: 18px;
+  left: 40px;
+  width: 165px;
+  height: 36px;
+  font-family: Lexend; /* Heading */
+  font-size: 20px;
+  line-height: 36px;
+  font-weight: 700;
+  color: #171A1FFF; /* neutral-900 */
+}
+
+:host-context(.side-navbar.collapsed) .logo svg {
+  left: 50%;
+  transform: translateX(-50%); /* Center horizontally */
+}
+
+:host-context(.side-navbar.collapsed) .logo span {
+  display: none; /* Hide the text when collapsed */
+}
+

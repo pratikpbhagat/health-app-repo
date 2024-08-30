@@ -1,0 +1,18 @@
+<div class="header">
+  <div class="header-left">
+    <a href="#" class="header-link" [class.active]="true">Dashboard</a>
+    <a href="#" class="header-link">Family Members</a>
+    <a href="#" class="header-link">Settings</a>
+  </div>
+  <div class="header-right">
+    <app-search-bar/>
+    <div class="profile-icon" (click)="toggleMenu()">
+      <img *ngIf="userProfilePicture" [src]="userProfilePicture" alt="User Profile">
+      <div *ngIf="!userProfilePicture" class="initials">{{ userInitials }}</div>
+    </div>
+    <div *ngIf="isMenuOpen" class="profile-menu">
+      <a href="#">My Profile</a>
+      <a href="#">Logout</a>
+    </div>
+  </div>
+</div>

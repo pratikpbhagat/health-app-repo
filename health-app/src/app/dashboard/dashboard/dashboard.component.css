@@ -1,0 +1,42 @@
+:host {
+  display: flex;
+  height: 100vh;
+}
+
+.right-column {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  transition: margin-left 0.3s;
+}
+
+.header-container {
+  height: 65px;
+  border-bottom: 2px solid rgba(204, 204, 204, 0.3); /* Lighter border color with reduced opacity */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05); /* Softer shadow */
+  width: calc(100% - 200px); /* Full width minus sidebar width */
+  transition: width 0.3s;
+  width: 100%;
+  box-sizing: border-box; /* Ensures padding is included in the total height/width */
+}
+
+.main-content {
+  flex: 1;
+  background-color: #ffffff; /* Example background color */
+  padding: 16px;
+  overflow-y: auto;
+  width: calc(100% - 200px); /* Full width minus sidebar width */
+  transition: width 0.3s;
+}
+
+.sidebar-collapsed app-sidebar {
+  width: 50px; /* Adjusted width when collapsed */
+}
+
+.sidebar-collapsed .right-column {
+  margin-left: 50px; /* Adjusted margin when sidebar is collapsed */
+}
+
+.sidebar-collapsed .main-content {
+  width: calc(100% - 50px); /* Full width minus collapsed sidebar width */
+}
