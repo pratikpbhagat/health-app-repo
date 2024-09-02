@@ -1,59 +1,32 @@
 <div [class.collapsed]="isCollapsed" class="side-navbar">
   <app-logo/>
-<!--  <div class="icon-container burger-icon" (click)="toggle()">{{isCollapsed ? '▷' : '◁'}}</div>-->
+  <!--  <div class="icon-container burger-icon" (click)="toggle()">{{isCollapsed ? '▷' : '◁'}}</div>-->
   <div class="icon-container burger-icon" (click)="toggle()">
-    <svg *ngIf="!isCollapsed" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="#000000">
-      <path d="M15.41 7.41 10.83 12l4.58 4.59L14 18l-6-6 6-6z"/>
-    </svg>
-    <svg *ngIf="isCollapsed" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="#000000">
-      <path d="M8.59 16.59 13.17 12 8.59 7.41 10 6l6 6-6 6z"/>
-    </svg>
+    <img *ngIf="!isCollapsed;" src="assets/images/collapse-left-nav.svg" alt="<"/>
+    <img *ngIf="isCollapsed" src="assets/images/expand-right-nav.svg" alt=">"/>
   </div>
 
   <ul class="menu">
-    <li [class.active]="!isCollapsed">
-      <svg class="icon-active" width="24" height="24" viewBox="0 0 24 24" fill="none"
-           xmlns="http://www.w3.org/2000/svg">
-        <path d="M3 13h4v8H3v-8zm6-5h4v13h-4V8zm6-3h4v16h-4V5z" fill="currentColor"/>
-      </svg>
+    <li [ngClass]="{'active': activeLink === 'Dashboard'}" (click)="setActiveLink('Dashboard')">
+      <img class="icon-active" src="assets/images/dashboard-icon.svg" alt="Dashboard"/>
       <span class="menu-text">Dashboard</span>
     </li>
-    <li>
-      <svg class="icon-active" width="24" height="24" viewBox="0 0 24 24" fill="none"
-           xmlns="http://www.w3.org/2000/svg">
-        <path
-          d="M6 2h12c1.1 0 2 .9 2 2v16c0 1.1-.9 2-2 2H6c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2zM6 0c-2.21 0-4 1.79-4 4v16c0 2.21 1.79 4 4 4h12c2.21 0 4-1.79 4-4V4c0-2.21-1.79-4-4-4H6z"
-          fill="currentColor"/>
-        <path d="M8 6h8v2H8V6zm0 4h8v2H8v-2zm0 4h5v2H8v-2z" fill="currentColor"/>
-      </svg>
+    <li [ngClass]="{'active': activeLink === 'Health Records'}" (click)="setActiveLink('Health Records')">
+      <img class="icon-active" src="assets/images/health-records-icon.svg" alt="Health Records"/>
       <span class="menu-text">Health Records</span>
     </li>
-    <li>
-      <svg class="icon-active" width="24" height="24" viewBox="0 0 24 24" fill="none"
-           xmlns="http://www.w3.org/2000/svg">
-        <path
-          d="M11.29 17.29a1 1 0 001.42 0l7-7a4.005 4.005 0 00-5.66-5.66l-7 7a1 1 0 000 1.42l4.24 4.24zm1.41-10.59a2.002 2.002 0 112.83 2.83l-7 7a2.002 2.002 0 11-2.83-2.83l7-7zM5.29 13.71l-4.24 4.24a4.005 4.005 0 005.66 5.66l4.24-4.24a1 1 0 00-1.42-1.42l-4.24 4.24a2.002 2.002 0 01-2.83-2.83l4.24-4.24a1 1 0 00-1.42-1.42z"
-          fill="currentColor"/>
-      </svg>
+    <li [ngClass]="{'active': activeLink === 'Medicines'}" (click)="setActiveLink('Medicines')">
+      <img class="icon-active" src="assets/images/medicines-icon.svg" alt="Medicines"/>
       <span class="menu-text">Medicines</span>
     </li>
-    <li>
-      <svg class="icon-active" width="24" height="24" viewBox="0 0 24 24" fill="none"
-           xmlns="http://www.w3.org/2000/svg">
-        <path
-          d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zM12 14c-4.42 0-8 2.69-8 6v2h16v-2c0-3.31-3.58-6-8-6z"
-          fill="currentColor"/>
-      </svg>
+    <li [ngClass]="{'active': activeLink === 'Profiles'}" (click)="setActiveLink('Profiles')">
+      <img class="icon-active" src="assets/images/profiles-icon.svg" alt="Profiles"/>
       <span class="menu-text">Profiles</span>
     </li>
-    <li>
-      <svg class="icon-active" width="24" height="24" viewBox="0 0 24 24" fill="none"
-           xmlns="http://www.w3.org/2000/svg">
-        <path
-          d="M19.14 12.94c.04-.3.06-.62.06-.94s-.02-.64-.06-.94l2.03-1.58c.18-.14.23-.4.12-.61l-1.93-3.34a.5.5 0 00-.61-.22l-2.39.96a7.007 7.007 0 00-1.63-.94l-.36-2.54a.5.5 0 00-.49-.42h-3.86a.5.5 0 00-.49.42l-.36 2.54a7.007 7.007 0 00-1.63.94l-2.39-.96a.5.5 0 00-.61.22l-1.93 3.34a.5.5 0 00.12.61l2.03 1.58c-.04.3-.06.62-.06.94s.02.64.06.94l-2.03 1.58a.5.5 0 00-.12.61l1.93 3.34c.12.21.39.27.61.22l2.39-.96c.5.37 1.04.69 1.63.94l.36 2.54c.04.24.25.42.49.42h3.86c.24 0 .45-.18.49-.42l.36-2.54c.59-.25 1.13-.57 1.63-.94l2.39.96c.22.09.48 0 .61-.22l1.93-3.34a.5.5 0 00-.12-.61l-2.03-1.58zM12 15.5c-1.93 0-3.5-1.57-3.5-3.5s1.57-3.5 3.5-3.5 3.5 1.57 3.5 3.5-1.57 3.5-3.5 3.5z"
-          fill="currentColor"/>
-      </svg>
+    <li [ngClass]="{'active': activeLink === 'Settings'}" (click)="setActiveLink('Settings')">
+      <img class="icon-active" src="assets/images/settings-icon.svg" alt="Settings"/>
       <span class="menu-text">Settings</span>
     </li>
   </ul>
+
 </div>

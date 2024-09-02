@@ -8,21 +8,23 @@
 
 .header-left {
   display: flex;
-  gap: 20px;
-  padding-left: 10px;
-  margin-top: 10px;
   font-weight: 700;
+  align-items: center;
+  justify-content: center;
 }
 
 .header-link {
   text-decoration: none;
   color: #333;
   font-weight: 500;
+  padding: 14px 12px;
+  border-radius: 4px;
 }
 
 .header-left .header-link.active {
   color: #6D31EDFF;  /* Highlight color */
-  border-bottom: 3px solid #6D31EDFF;  /* Underline */
+  border-bottom: 4px solid #6D31EDFF;  /* Underline */
+  font-weight: 700;
 }
 
 .header-right {

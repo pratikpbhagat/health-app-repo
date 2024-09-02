@@ -1,8 +1,11 @@
 <div class="header">
   <div class="header-left">
-    <a href="#" class="header-link" [class.active]="true">Dashboard</a>
-    <a href="#" class="header-link">Family Members</a>
-    <a href="#" class="header-link">Settings</a>
+    <a href="#" class="header-link" [ngClass]="{'active': activeLink === 'Dashboard'}"
+       (click)="setActiveLink('Dashboard')">Dashboard</a>
+    <a href="#" class="header-link" [ngClass]="{'active': activeLink === 'Family Members'}"
+       (click)="setActiveLink('Family Members')">Family Members</a>
+    <a href="#" class="header-link" [ngClass]="{'active': activeLink === 'Settings'}"
+       (click)="setActiveLink('Settings')">Settings</a>
   </div>
   <div class="header-right">
     <app-search-bar/>

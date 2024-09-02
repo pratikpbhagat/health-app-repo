@@ -14,6 +14,12 @@ export class HeaderComponent {
   userProfilePicture: string | null = null;  // Assign user's profile picture URL here
   userInitials = 'PB';  // Assign user's initials here
 
+  activeLink: string = 'Dashboard'; // Set the default active link
+
+  setActiveLink(link: string) {
+    this.activeLink = link;
+  }
+
   toggleMenu() {
     this.isMenuOpen = !this.isMenuOpen;
   }

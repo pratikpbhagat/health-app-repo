@@ -12,11 +12,16 @@ import {LogoComponent} from "../common/logo/logo.component";
 export class SidebarComponent {
 
   isCollapsed = false;
+  activeLink: string = 'Dashboard'; // Set the default active link
 
   @Output() toggleSidebar = new EventEmitter<boolean>();
 
   toggle() {
     this.isCollapsed = !this.isCollapsed;
     this.toggleSidebar.emit(this.isCollapsed);
+  }
+
+  setActiveLink(link: string) {
+    this.activeLink = link;
   }
 }
